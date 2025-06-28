@@ -65,7 +65,7 @@
 
 1. Claude Code実行前にシェルで：
    ```bash
-   export ANTHROPIC_MODEL="claude-3-opus-20240229"
+   export ANTHROPIC_MODEL="claude-opus-4-20250514"
    claude
    ```
 
@@ -73,7 +73,7 @@
    ```json
    {
      "env": {
-       "ANTHROPIC_MODEL": "claude-3-opus-20240229",
+       "ANTHROPIC_MODEL": "claude-opus-4-20250514",
        "DISABLE_TELEMETRY": "1"
      }
    }
@@ -81,7 +81,7 @@
 
 3. Claude Code起動時の単一セッション用：
    ```bash
-   ANTHROPIC_MODEL="claude-3-opus-20240229" claude
+   ANTHROPIC_MODEL="claude-opus-4-20250514" claude
    ```
 
 設定ファイルで設定された環境変数はセッション間で一貫して適用され、シェルで設定されたものはその特定の環境にのみ適用されます。

@@ -65,7 +65,7 @@ You can set environment variables in multiple ways:
 
 1. In your shell before running Claude Code:
    ```bash
-   export ANTHROPIC_MODEL="claude-3-opus-20240229"
+   export ANTHROPIC_MODEL="claude-opus-4-20250514"
    claude
    ```
 
@@ -73,7 +73,7 @@ You can set environment variables in multiple ways:
    ```json
    {
      "env": {
-       "ANTHROPIC_MODEL": "claude-3-opus-20240229",
+       "ANTHROPIC_MODEL": "claude-opus-4-20250514",
        "DISABLE_TELEMETRY": "1"
      }
    }
@@ -81,7 +81,7 @@ You can set environment variables in multiple ways:
 
 3. For a single session when launching Claude Code:
    ```bash
-   ANTHROPIC_MODEL="claude-3-opus-20240229" claude
+   ANTHROPIC_MODEL="claude-opus-4-20250514" claude
    ```
 
 Environment variables set in settings files will apply consistently across sessions, while those set in your shell apply only to that particular environment.

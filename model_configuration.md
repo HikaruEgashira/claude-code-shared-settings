@@ -15,7 +15,7 @@ You can override the default model selection with environment variables:
 ```json
 {
   "env": {
-    "ANTHROPIC_MODEL": "claude-3-opus-20240229"
+    "ANTHROPIC_MODEL": "claude-opus-4-20250514"
   }
 }
 ```
@@ -32,7 +32,7 @@ Configure the background model with:
 ```json
 {
   "env": {
-    "ANTHROPIC_SMALL_FAST_MODEL": "claude-3-haiku-20240307"
+    "ANTHROPIC_SMALL_FAST_MODEL": "claude-3-5-haiku-20241022"
   }
 }
 ```
@@ -65,7 +65,7 @@ When using Claude through cloud platforms, specify the model path:
 {
   "env": {
     "CLAUDE_CODE_USE_BEDROCK": "1",
-    "ANTHROPIC_MODEL": "anthropic.claude-3-opus-20240229"
+    "ANTHROPIC_MODEL": "anthropic.claude-opus-4-20250514"
   }
 }
 ```
@@ -76,7 +76,7 @@ When using Claude through cloud platforms, specify the model path:
 {
   "env": {
     "CLAUDE_CODE_USE_VERTEX": "1",
-    "ANTHROPIC_MODEL": "publishers/anthropic/models/claude-3-opus-20240229"
+    "ANTHROPIC_MODEL": "publishers/anthropic/models/claude-opus-4-20250514"
   }
 }
 ```

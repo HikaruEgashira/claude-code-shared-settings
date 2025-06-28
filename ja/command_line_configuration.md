@@ -86,5 +86,5 @@ claude config set -g env.CLAUDE_CODE_MAX_OUTPUT_TOKENS "4000"
 claude config set -g env.MAX_THINKING_TOKENS "3000"
 
 # 特定のモデル用に設定
-claude config set env.ANTHROPIC_MODEL "claude-3-opus-20240229"
+claude config set env.ANTHROPIC_MODEL "claude-opus-4-20250514"
 ```
