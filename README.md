@@ -2,7 +2,10 @@
 
 # Claude Code Shared Settings
 
+**[English](README.md)** | **[日本語](ja/README.md)**
+
 <img width="500" src="./header.png" alt="Parsentry Logo">
+
 
 </div>
 
