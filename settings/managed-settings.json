@@ -1,0 +1,26 @@
+{
+    "$schema": "./settings-schema.json",
+    "permissions": {
+        "deny": [
+            "Bash(sudo:*)",
+            "Bash(curl -fsSL:*)",
+            "Bash(wget:*)",
+            "Bash(nc:*)",
+            "Bash(bash -c:*)",
+            "Bash(sh -c:*)",
+            "Bash(env)",
+            "Bash(gh pr review -a:*)",
+            "Bash(gh pr review --approve:*)",
+            "Bash(terraform apply -auto-approve:*)",
+            "Read(**/.env*)",
+            "Read(**/*credential*)"
+        ],
+        "disableBypassPermissionsMode": "disable"
+    },
+    "includeCoAuthoredBy": false,
+    "env": {
+        "DISABLE_BUG_COMMAND": "1",
+        "DISABLE_ERROR_REPORTING": "1",
+        "DISABLE_TELEMETRY": "1"
+    }
+}

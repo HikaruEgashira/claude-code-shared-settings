@@ -1,0 +1,301 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.anthropic.com/claude-code/settings",
+  "title": "Claude Code Settings Schema",
+  "description": "JSON Schema for Claude Code settings files",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "apiKeyHelper": {
+      "type": "string",
+      "description": "Custom script to generate authentication values"
+    },
+    "cleanupPeriodDays": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 30,
+      "description": "How long to retain chat transcripts (in days)"
+    },
+    "env": {
+      "type": "object",
+      "description": "Environment variables applied to every session",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "properties": {
+        "ANTHROPIC_API_KEY": {
+          "type": "string",
+          "description": "API key for the Claude SDK"
+        },
+        "ANTHROPIC_AUTH_TOKEN": {
+          "type": "string",
+          "description": "Custom value for the Authorization headers (prefixed with Bearer)"
+        },
+        "ANTHROPIC_CUSTOM_HEADERS": {
+          "type": "string",
+          "description": "Custom headers to add to requests (in Name: Value format)"
+        },
+        "ANTHROPIC_MODEL": {
+          "type": "string",
+          "description": "Name of custom model to use"
+        },
+        "ANTHROPIC_SMALL_FAST_MODEL": {
+          "type": "string",
+          "description": "Name of Haiku-class model for background tasks"
+        },
+        "ANTHROPIC_API_URL": {
+          "type": "string",
+          "format": "uri",
+          "description": "Custom endpoint URL for specialized deployments"
+        },
+        "BASH_DEFAULT_TIMEOUT_MS": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Default timeout for long-running bash commands"
+        },
+        "BASH_MAX_TIMEOUT_MS": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Maximum timeout the model can set for bash commands"
+        },
+        "BASH_MAX_OUTPUT_LENGTH": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Maximum characters in bash outputs before truncation"
+        },
+        "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Return to original working directory after each Bash command"
+        },
+        "CLAUDE_CODE_API_KEY_HELPER_TTL_MS": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Interval for refreshing credentials when using apiKeyHelper"
+        },
+        "CLAUDE_CODE_MAX_OUTPUT_TOKENS": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Maximum number of output tokens for most requests"
+        },
+        "MAX_THINKING_TOKENS": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Force a specific thinking budget for the model"
+        },
+        "MAX_MCP_OUTPUT_TOKENS": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Maximum tokens allowed in MCP tool responses"
+        },
+        "CLAUDE_CODE_USE_BEDROCK": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Enable Amazon Bedrock integration"
+        },
+        "CLAUDE_CODE_USE_VERTEX": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Enable Google Vertex AI integration"
+        },
+        "CLAUDE_CODE_SKIP_BEDROCK_AUTH": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Skip AWS authentication for Bedrock"
+        },
+        "CLAUDE_CODE_SKIP_VERTEX_AUTH": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Skip Google authentication for Vertex"
+        },
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Disable all non-essential network traffic"
+        },
+        "DISABLE_AUTOUPDATER": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Disable automatic updates"
+        },
+        "DISABLE_BUG_COMMAND": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Disable the /bug command"
+        },
+        "DISABLE_COST_WARNINGS": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Disable cost warning messages"
+        },
+        "DISABLE_ERROR_REPORTING": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Opt out of Sentry error reporting"
+        },
+        "DISABLE_NON_ESSENTIAL_MODEL_CALLS": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Disable model calls for non-critical paths"
+        },
+        "DISABLE_TELEMETRY": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Opt out of Statsig telemetry"
+        },
+        "HTTP_PROXY": {
+          "type": "string",
+          "format": "uri",
+          "description": "Specify HTTP proxy server for network connections"
+        },
+        "HTTPS_PROXY": {
+          "type": "string",
+          "format": "uri",
+          "description": "Specify HTTPS proxy server for network connections"
+        },
+        "MCP_TIMEOUT": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Timeout in milliseconds for MCP server startup"
+        },
+        "MCP_TOOL_TIMEOUT": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Timeout in milliseconds for MCP tool execution"
+        },
+        "CLAUDE_CODE_ENABLE_TELEMETRY": {
+          "type": "string",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "description": "Enable telemetry data collection"
+        },
+        "OTEL_METRICS_EXPORTER": {
+          "type": "string",
+          "description": "OpenTelemetry metrics exporter configuration"
+        }
+      }
+    },
+    "includeCoAuthoredBy": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to include Claude byline in git commits"
+    },
+    "permissions": {
+      "type": "object",
+      "description": "Access control settings",
+      "additionalProperties": false,
+      "properties": {
+        "allow": {
+          "type": "array",
+          "description": "Array of permission rules to allow tool use",
+          "items": {
+            "type": "string",
+            "pattern": "^(Bash|Edit|MultiEdit|NotebookEdit|WebFetch|WebSearch|Write|Read)\\(.*\\)$"
+          }
+        },
+        "deny": {
+          "type": "array",
+          "description": "Array of permission rules to deny tool use",
+          "items": {
+            "type": "string",
+            "pattern": "^(Bash|Edit|MultiEdit|NotebookEdit|WebFetch|WebSearch|Write|Read)\\(.*\\)$"
+          }
+        },
+        "additionalDirectories": {
+          "type": "array",
+          "description": "Additional working directories Claude has access to",
+          "items": {
+            "type": "string"
+          }
+        },
+        "defaultMode": {
+          "type": "string",
+          "enum": [
+            "allowEdits",
+            "readOnly",
+            "bypassPermissions"
+          ],
+          "default": "allowEdits",
+          "description": "Default permission mode when opening Claude Code"
+        },
+        "disableBypassPermissionsMode": {
+          "type": "string",
+          "enum": [
+            "disable"
+          ],
+          "description": "Set to 'disable' to prevent bypass mode"
+        }
+      }
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "dark",
+        "light",
+        "dark-daltonized",
+        "light-daltonized"
+      ],
+      "default": "dark",
+      "description": "UI theme for Claude Code"
+    },
+    "preferredNotifChannel": {
+      "type": "string",
+      "enum": [
+        "iterm2",
+        "iterm2_with_bell",
+        "terminal_bell",
+        "notifications_disabled"
+      ],
+      "default": "iterm2",
+      "description": "Preferred notification channel"
+    },
+    "verbose": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable verbose output for debugging"
+    },
+    "autoUpdates": {
+      "type": "boolean",
+      "default": true,
+      "description": "Enable automatic updates"
+    }
+  }
+}
