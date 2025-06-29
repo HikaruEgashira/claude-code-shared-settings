@@ -9,6 +9,7 @@
             "Bash(bash -c:*)",
             "Bash(sh -c:*)",
             "Bash(env)",
+            "Bash(rm -rf:*)",
             "Bash(gh pr review -a:*)",
             "Bash(gh pr review --approve:*)",
             "Bash(terraform apply -auto-approve:*)",
