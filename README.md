@@ -12,6 +12,8 @@
 ## Shared Settings
 - [Enterprise Settings](./settings/managed-settings.json): Global settings for Safety
     ```bash
+    gh repo clone HikaruEgashira/claude-code-shared-settings
+    cd claude-code-shared-settings
     sudo install.sh
     ```
 - [Project Settings](./settings/settings.json): Project-specific settings for Reliability
