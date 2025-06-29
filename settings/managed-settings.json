@@ -12,8 +12,8 @@
             "Bash(gh pr review -a:*)",
             "Bash(gh pr review --approve:*)",
             "Bash(terraform apply -auto-approve:*)",
-            "Read(**/.env*)",
-            "Read(**/*credential*)"
+            "Read(.env*)",
+            "Read(*credential*)"
         ],
         "disableBypassPermissionsMode": "disable"
     },
